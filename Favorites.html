@@ -1,0 +1,89 @@
+<!DOCTYPE html> <!-- Declares document type as HTML5 -->
+<html lang="en"> <!-- Root element with English language -->
+
+<head> <!-- Head section -->
+    
+    <meta charset="UTF-8"> <!-- Character encoding -->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive scaling -->
+    
+    <title>Favorites - Book Explorer</title> <!-- Page title -->
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script> <!-- Loads Tailwind -->
+
+</head>
+
+<body class="bg-gray-100 min-h-screen flex flex-col"> <!-- Page layout styling -->
+
+    <!-- ================= NAVBAR ================= -->
+    <nav class="bg-blue-600 text-white p-4"> <!-- Navigation container -->
+        
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            
+            <h1 class="text-xl font-bold">Book Explorer</h1> <!-- Logo/title -->
+
+            <ul class="flex space-x-6">
+                
+                <li>
+                    <a href="index.html" class="hover:underline">Home</a>
+                </li>
+
+                <li>
+                    <!-- Active page styled differently -->
+                    <a href="favorites.html" class="underline font-semibold">
+                        Favorites
+                    </a>
+                </li>
+
+                <li>
+                    <a href="about.html" class="hover:underline">About</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </nav>
+    <!-- ============== END NAVBAR ============== -->
+
+    <!-- ================= PAGE HEADER ================= -->
+    <section class="bg-white py-10 text-center">
+        
+        <h2 class="text-3xl font-bold">
+            Your Favorite Books
+        </h2>
+
+        <p class="text-gray-600 mt-2">
+            Books you saved will appear here.
+        </p>
+
+    </section>
+    <!-- ============== END HEADER ============== -->
+
+    <!-- ================= FAVORITES GRID ================= -->
+    <main class="flex-grow max-w-6xl mx-auto px-4 py-10">
+        
+        <!-- Empty state message -->
+        <div id="emptyMessage" class="text-center text-gray-500">
+            No favorite books yet.
+        </div>
+
+        <!-- Grid container for future JavaScript content -->
+        <div id="favoritesGrid"
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-6">
+        </div>
+
+    </main>
+    <!-- ============== END MAIN ============== -->
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-blue-600 text-white text-center p-4">
+        
+        <p>&copy; 2026 Book Explorer. All rights reserved.</p>
+
+    </footer>
+    <!-- ============== END FOOTER ============== -->
+
+</body>
+</html>
