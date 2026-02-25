@@ -18,38 +18,102 @@ document.addEventListener("DOMContentLoaded", () => {
     const favoritesGrid = document.getElementById("favoritesGrid");
 
     // ===============================
-    // HOMEPAGE LOGIC
-    // ===============================
-    if (bookGrid) {
+// HOMEPAGE LOGIC
+// ===============================
+if (bookGrid) {
 
-        // Select all add-to-favorites buttons
-        const buttons = document.querySelectorAll(".add-to-favorites");
+    // Import fetch function dynamically
+    import("./fetchBooks.js").then(module => {
 
-        // Loop through buttons
-        buttons.forEach(button => {
+        const { fetchBooks } = module;
 
-            // Add click event
-            button.addEventListener("click", () => {
+        // Select search elements
+        const searchInput = document.getElementById("searchInput");
+        const searchBtn = document.getElementById("searchBtn");
+        const loadingMessage = document.getElementById("loadingMessage");
+        const noResultsMessage = document.getElementById("noResultsMessage");
 
-                // Create book object from dataset
-                const book = {
-                    id: button.dataset.id,
-                    title: button.dataset.title,
-                    author: button.dataset.author
-                };
+        // Function to render books
+        async function handleSearch() {
 
-                // Save to localStorage
-                addFavorite(book);
+            // Clear previous results
+            bookGrid.innerHTML = "";
+            noResultsMessage.classList.add("hidden");
 
-                // Update UI
-                button.textContent = "Added ✔";
-                button.disabled = true;
+            // Get search value
+            const query = searchInput.value.trim();
+
+            if (!query) return;
+
+            // Show loading
+            loadingMessage.classList.remove("hidden");
+
+            // Fetch books
+            const books = await fetchBooks(query);
+
+            // Hide loading
+            loadingMessage.classList.add("hidden");
+
+            // If no results
+            if (books.length === 0) {
+                noResultsMessage.classList.remove("hidden");
+                return;
+            }
+
+            // Render books
+            books.forEach(book => {
+
+                // Create card
+                const card = document.createElement("div");
+                card.className = "bg-white p-4 rounded shadow";
+
+                // Title
+                const title = document.createElement("h3");
+                title.className = "font-semibold text-lg mb-2";
+                title.textContent = book.title;
+
+                // Author
+                const author = document.createElement("p");
+                author.className = "text-gray-500 text-sm mb-4";
+                author.textContent = book.author_name ? book.author_name[0] : "Unknown Author";
+
+                // Button
+                const button = document.createElement("button");
+                button.className = "bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700";
+                button.textContent = "Add to Favorites";
+
+                // Add click event
+                button.addEventListener("click", () => {
+
+                    const bookData = {
+                        id: book.key,
+                        title: book.title,
+                        author: book.author_name ? book.author_name[0] : "Unknown"
+                    };
+
+                    addFavorite(bookData);
+
+                    button.textContent = "Added ✔";
+                    button.disabled = true;
+
+                });
+
+                // Append elements
+                card.appendChild(title);
+                card.appendChild(author);
+                card.appendChild(button);
+
+                bookGrid.appendChild(card);
 
             });
 
-        });
-    }
+        }
 
+        // Attach search button event
+        searchBtn.addEventListener("click", handleSearch);
+
+    });
+}
 
     // ===============================
     // FAVORITES PAGE LOGIC

@@ -62,35 +62,52 @@
     </section>
     <!-- ============== END HERO SECTION ============== -->
 
-    <!-- ================= BOOK GRID ================= -->
-<main class="flex-grow max-w-6xl mx-auto px-4 py-10"> 
-    
-    <!-- Grid container with ID for JavaScript targeting -->
-    <div id="bookGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        
-        <!-- Book Card Placeholder -->
-        <div class="bg-white p-4 rounded shadow">
-            
-            <h3 class="font-semibold text-lg mb-2">Sample Book</h3> <!-- Book title -->
-            
-            <p class="text-gray-500 text-sm mb-4">John Doe</p> <!-- Author name -->
+    <!-- <!-- ================= SEARCH SECTION ================= -->
+<section class="max-w-4xl mx-auto px-4 mt-8">
 
-            <!-- Add to Favorites Button -->
-            <button 
-                class="add-to-favorites bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
-                data-id="1"
-                data-title="Sample Book"
-                data-author="John Doe"
-            >
-                Add to Favorites
-            </button>
+    <!-- Search input and button container -->
+    <div class="flex gap-4">
 
-        </div>
+        <!-- Search input field -->
+        <input 
+            type="text" 
+            id="searchInput"
+            placeholder="Search books by title..."
+            class="flex-grow p-2 border rounded"
+        >
+
+        <!-- Search button -->
+        <button 
+            id="searchBtn"
+            class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+        >
+            Search
+        </button>
 
     </div>
 
-</main>
+</section>
 
+
+<!-- ================= BOOK GRID ================= -->
+<main class="flex-grow max-w-6xl mx-auto px-4 py-10">
+
+    <!-- Loading message -->
+    <div id="loadingMessage" class="text-center text-gray-500 hidden">
+        Loading books...
+    </div>
+
+    <!-- No results message -->
+    <div id="noResultsMessage" class="text-center text-gray-500 hidden">
+        No books found.
+    </div>
+
+    <!-- Grid container (now EMPTY for dynamic rendering) -->
+    <div id="bookGrid"
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-6">
+    </div>
+
+</main>
     <!-- ============== END MAIN ============== -->
 
     <!-- ================= FOOTER ================= -->
