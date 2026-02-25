@@ -1,0 +1,82 @@
+<!DOCTYPE html> <!-- Declares HTML5 document type -->
+<html lang="en"> <!-- Root HTML element with English language -->
+
+<head> <!-- Head section starts -->
+    
+    <meta charset="UTF-8"> <!-- Character encoding -->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Enables responsive design -->
+    
+    <title>About - Book Explorer</title> <!-- Browser tab title -->
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script> <!-- Loads Tailwind framework -->
+
+</head> <!-- End head section -->
+
+<body class="bg-gray-100 min-h-screen flex flex-col"> <!-- Applies background and vertical layout -->
+
+    <!-- ================= NAVBAR ================= -->
+    <nav class="bg-blue-600 text-white p-4"> <!-- Navigation bar container -->
+        
+        <div class="max-w-6xl mx-auto flex justify-between items-center"> <!-- Centers content -->
+            
+            <h1 class="text-xl font-bold">Book Explorer</h1> <!-- Website title -->
+
+            <ul class="flex space-x-6"> <!-- Navigation links -->
+                
+                <li>
+                    <a href="index.html" class="hover:underline">Home</a> <!-- Home link -->
+                </li>
+
+                <li>
+                    <a href="favorites.html" class="hover:underline">Favorites</a> <!-- Favorites link -->
+                </li>
+
+                <li>
+                    <!-- Active page styled differently -->
+                    <a href="about.html" class="underline font-semibold">
+                        About
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </nav>
+    <!-- ============== END NAVBAR ============== -->
+
+    <!-- ================= ABOUT SECTION ================= -->
+    <main class="flex-grow max-w-4xl mx-auto px-6 py-12 bg-white shadow rounded mt-10"> 
+        <!-- Main content container -->
+
+        <h2 class="text-3xl font-bold mb-6 text-center">
+            About Book Explorer
+        </h2> <!-- Page heading -->
+
+        <p class="text-gray-700 mb-4">
+            Book Explorer is a responsive web application built using HTML, Tailwind CSS, and JavaScript.
+        </p> <!-- Project description -->
+
+        <p class="text-gray-700 mb-4">
+            The application allows users to browse books from a public API, search by title, and save their favorite books.
+        </p> <!-- Features explanation -->
+
+        <p class="text-gray-700">
+            This project demonstrates responsive design, modular JavaScript, API integration using async/await, and localStorage persistence.
+        </p> <!-- Technical explanation -->
+
+    </main>
+    <!-- ============== END ABOUT SECTION ============== -->
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-blue-600 text-white text-center p-4 mt-10"> <!-- Footer container -->
+        
+        <p>&copy; 2026 Book Explorer. All rights reserved.</p> <!-- Copyright -->
+
+    </footer>
+    <!-- ============== END FOOTER ============== -->
+
+</body> <!-- End body -->
+</html> <!-- End HTML document -->
