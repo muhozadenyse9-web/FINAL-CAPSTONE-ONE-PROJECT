@@ -1,0 +1,111 @@
+<!DOCTYPE html> <!-- Declares this document as HTML5 -->
+<html lang="en"> <!-- Root HTML element with English language -->
+
+<head> <!-- Head section starts -->
+    
+    <meta charset="UTF-8"> <!-- Sets character encoding -->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Enables responsive design -->
+    
+    <title>Book Explorer</title> <!-- Browser tab title -->
+
+    <!-- Tailwind CSS CDN link -->
+    <script src="https://cdn.tailwindcss.com"></script> <!-- Loads Tailwind framework -->
+
+</head> <!-- End of head -->
+
+<body class="bg-gray-100 min-h-screen flex flex-col"> <!-- Body styled with background and vertical flex layout -->
+
+    <!-- ================= NAVBAR ================= -->
+    <nav class="bg-blue-600 text-white p-4"> <!-- Navigation bar container -->
+        
+        <div class="max-w-6xl mx-auto flex justify-between items-center"> <!-- Centers content and spaces items -->
+            
+            <h1 class="text-xl font-bold">Book Explorer</h1> <!-- Website title -->
+
+            <ul class="flex space-x-6"> <!-- Navigation links container -->
+                
+                <li>
+                    <a href="index.html" class="hover:underline">Home</a> <!-- Home link -->
+                </li>
+
+                <li>
+                    <a href="favorites.html" class="hover:underline">Favorites</a> <!-- Favorites link -->
+                </li>
+
+                <li>
+                    <a href="about.html" class="hover:underline">About</a> <!-- About link -->
+                </li>
+
+            </ul>
+
+        </div>
+
+    </nav>
+    <!-- ============== END NAVBAR ============== -->
+
+    <!-- ================= HERO SECTION ================= -->
+    <section class="bg-white py-12 text-center"> <!-- Hero section container -->
+        
+        <div class="max-w-4xl mx-auto px-4"> <!-- Centers hero content -->
+            
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                Discover Your Next Favorite Book
+            </h2> <!-- Main headline -->
+
+            <p class="text-gray-600">
+                Browse books, search by title, and save your favorites.
+            </p> <!-- Supporting text -->
+
+        </div>
+
+    </section>
+    <!-- ============== END HERO SECTION ============== -->
+
+    <!-- ================= BOOK GRID ================= -->
+    <main class="flex-grow max-w-6xl mx-auto px-4 py-10"> <!-- Main content area -->
+        
+        <!-- Responsive Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            
+            <!-- Book Card Placeholder -->
+            <div class="bg-white p-4 rounded shadow">
+                
+                <h3 class="font-semibold text-lg mb-2">Book Title</h3> <!-- Placeholder title -->
+                
+                <p class="text-gray-500 text-sm">Author Name</p> <!-- Placeholder author -->
+
+            </div>
+
+            <!-- Duplicate placeholder card -->
+            <div class="bg-white p-4 rounded shadow">
+                <h3 class="font-semibold text-lg mb-2">Book Title</h3>
+                <p class="text-gray-500 text-sm">Author Name</p>
+            </div>
+
+            <div class="bg-white p-4 rounded shadow">
+                <h3 class="font-semibold text-lg mb-2">Book Title</h3>
+                <p class="text-gray-500 text-sm">Author Name</p>
+            </div>
+
+            <div class="bg-white p-4 rounded shadow">
+                <h3 class="font-semibold text-lg mb-2">Book Title</h3>
+                <p class="text-gray-500 text-sm">Author Name</p>
+            </div>
+
+        </div>
+        <!-- ============== END GRID ============== -->
+
+    </main>
+    <!-- ============== END MAIN ============== -->
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-blue-600 text-white text-center p-4">
+        
+        <p>&copy; 2026 Book Explorer. All rights reserved.</p> <!-- Copyright text -->
+
+    </footer>
+    <!-- ============== END FOOTER ============== -->
+
+</body> <!-- End body -->
+</html> <!-- End HTML document -->
